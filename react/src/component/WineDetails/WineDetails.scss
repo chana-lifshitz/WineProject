@@ -1,0 +1,130 @@
+.WineDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #faf6f2;
+  font-family: 'Assistant', sans-serif;
+  direction: rtl;
+  min-height: 100vh;
+}
+
+.wine-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  max-width: 720px;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.wine-image-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.wine-image {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #443c2f;
+
+  h1 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  h3 {
+    font-size: 0.85rem;
+    color: #a58c5f;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+  }
+}
+
+.wine-image-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; // מרכז לגובה
+  min-width: 100px;
+  min-height: 200px; // גובה נעים
+}
+
+.reviews-list {
+  padding-inline-start: 1rem; // קרב את הנקודות למלל
+  margin: 0.4rem 0;
+  list-style: disc;
+   list-style: none;
+  padding: 0;
+  margin: 0.4rem 0;
+}
+
+
+.add-review {
+  margin-top: 0.5rem;
+
+  textarea {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.3rem;
+    width: 100%;
+    font-size: 0.8rem;
+    resize: none;
+    height: 60px;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+button {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #a8573b;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5c4b35;
+}
+
+.add-to-cart {
+  background-color: #a8573b;
+}
+
+.add-to-cart:hover {
+  background-color: #934a33;
+}
+
+.cart-message {
+  color: green;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}

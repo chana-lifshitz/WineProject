@@ -1,0 +1,96 @@
+.About {
+  padding: 3rem 1rem;
+  direction: rtl;
+  font-family: 'David Libre', 'Segoe UI', sans-serif;
+  background-color: #faf6f1;
+  color: #3e2d26;
+  max-width: 1200px;
+  margin: auto;
+
+  .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+
+    .image-wrap {
+      flex: 1;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+      }
+    }
+
+    .col--7 {
+      flex: 2 1 60%;
+    }
+
+    .col--5 {
+      flex: 1 1 35%;
+    }
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 2.1;
+    white-space: pre-line;
+    margin: 0 0 2rem 0;
+
+    strong {
+      display: block;
+      font-size: 1.3rem;
+      color: #7b2e2e;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    em {
+      display: block;
+      margin-top: 1rem;
+      font-style: italic;
+      color: #5b4636;
+    }
+  }
+
+  .extra-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+
+    img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .image-grid {
+      flex-direction: column;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .extra-images img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

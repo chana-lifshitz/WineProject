@@ -1,0 +1,28 @@
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+
+  .login-form-container {
+    background-color: #f7f3ec;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    width: min(320px, calc(100vw - 32px));
+    box-shadow: 0 0 12px rgba(100, 50, 20, 0.2);
+    font-family: 'Assistant', sans-serif;
+    text-align: center;
+
+    h2 {
+      color: #5e2c04;
+      margin: 0 0 24px;
+    }
+
+    .login-config-error {
+      color: #8b1e1e;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.custom-toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fffefa;
+  border: 1px solid #ffe082;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  z-index: 9999;
+  width: 300px;
+  direction: rtl;
+
+  .custom-toast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #6d4c41;
+    margin-bottom: 0.5rem;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #6d4c41;
+    }
+  }
+
+  .custom-toast-body {
+    color: #5d4037;
+    font-family: 'David Libre', 'Segoe UI', sans-serif;
+  }
+}

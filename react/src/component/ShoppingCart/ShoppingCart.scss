@@ -1,0 +1,70 @@
+.ShoppingCart {
+  padding: 1rem;
+  direction: rtl;
+  font-family: 'Assistant', sans-serif;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #4a3b28;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  gap: 1.5rem;
+}
+
+.cart-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background-color: #fdfdfd;
+}
+
+.cart-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #4a3b28;
+}
+
+.cart-details h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cart-details p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #7a674d;
+}
+
+.remove-button {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #c94d3f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: center; // ממרכז את הכפתור מתחת למחיר
+  transition: background-color 0.3s;
+}
+
+
+.remove-button:hover {
+  background-color: #a73a30;
+}
