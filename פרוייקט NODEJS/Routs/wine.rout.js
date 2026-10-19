@@ -3,9 +3,9 @@ const router = express.Router();
 const wineService = require('../Servises/wine.service');
 const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
+// const fs = require('fs');
 
-const dataPath = path.join(__dirname, '..', 'data', 'wines.json');
+// const dataPath = path.join(__dirname, '..', 'data', 'wines.json');
 
 // הגדרת אחסון התמונות לתיקיית images/
 const storage = multer.diskStorage({
@@ -30,38 +30,38 @@ router.post('/upload-image', upload.single('image'), (req, res) => {
 });
 
 // פונקציה ליצירת מזהה יין חדש (אופציונלי אם לא משתמשים ב-service)
-async function generateNewId() {
-  const rawDataWine = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-  const winesArray = rawDataWine.wines;
-  const maxId = winesArray.reduce((max, wine) => Math.max(max, parseInt(wine.id)), 0);
-  return (maxId + 1).toString();
-}
+// async function generateNewId() {
+//   const rawDataWine = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+//   const winesArray = rawDataWine.wines;
+//   const maxId = winesArray.reduce((max, wine) => Math.max(max, parseInt(wine.id)), 0);
+//   return (maxId + 1).toString();
+// }
 
 // הוספת יין חדש דרך רואטר (אם לא משתמשים בשירות)
-router.post('/wines', async (req, res) => {
-  try {
-    const rawDataWine = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-    const winesArray = rawDataWine.wines;
+// router.post('/wines', async (req, res) => {
+//   try {
+//     const rawDataWine = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+//     const winesArray = rawDataWine.wines;
 
-    const newWine = {
-      id: await generateNewId(),
-      name: req.body.name,
-      category: req.body.category,
-      description: req.body.description,
-      price: parseFloat(req.body.price),
-      image: req.body.image, // רק שם קובץ
-      reviews: [],
-      totalSold: 0
-    };
+//     const newWine = {
+//       id: await generateNewId(),
+//       name: req.body.name,
+//       category: req.body.category,
+//       description: req.body.description,
+//       price: parseFloat(req.body.price),
+//       image: req.body.image, // רק שם קובץ
+//       reviews: [],
+//       totalSold: 0
+//     };
 
-    winesArray.push(newWine);
-    fs.writeFileSync(dataPath, JSON.stringify(rawDataWine, null, 2), 'utf-8');
+//     winesArray.push(newWine);
+//     fs.writeFileSync(dataPath, JSON.stringify(rawDataWine, null, 2), 'utf-8');
 
-    res.json(newWine);
-  } catch (err) {
-    res.status(500).json({ error: 'שגיאה בשמירת יין חדש' });
-  }
-});
+//     res.json(newWine);
+//   } catch (err) {
+//     res.status(500).json({ error: 'שגיאה בשמירת יין חדש' });
+//   }
+// });
 
 // Get all wines
 router.get('/', async (req, res) => {

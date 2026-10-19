@@ -48,7 +48,7 @@ export function CheckCustomer(email: string, password: string) {
 }
 
 export function GoogleCustomerLogin(credential: string) {
-  return axios.post('http://localhost:2000/api/customers/google', { credential });
+  return axios.post('http://localhost:5000/api/customers/google', { credential });
 }
 
 export function SendCheckoutEmail(order: {
@@ -57,7 +57,7 @@ export function SendCheckoutEmail(order: {
   items: Array<Pick<WineModel, 'id' | 'name' | 'category' | 'price'>>;
   totalPrice: number;
 }) {
-  return axios.post('http://localhost:2000/api/checkout/email', order);
+  return axios.post('http://localhost:5000/api/checkout/email', order);
 }
 
 export function AddCustomer(name:string, email: string, password: string) {
