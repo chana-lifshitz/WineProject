@@ -1,0 +1,66 @@
+.SignUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+
+  .login-form-container {
+    background-color: #f7f3ec;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 30px;
+    width: 320px;
+    box-shadow: 0 0 12px rgba(100, 50, 20, 0.2);
+    font-family: 'Assistant', sans-serif;
+
+    h2 {
+      text-align: center;
+      color: #5e2c04;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #c8b7a6;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .error {
+      color: #a00;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .suggest-password {
+      background-color: #9c6b2c;
+      color: white;
+      padding: 8px 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #7e5524;
+      }
+    }
+
+    button[type='submit'] {
+      background-color: #5e2c04;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #452101;
+      }
+    }
+  }
+}

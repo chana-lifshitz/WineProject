@@ -1,0 +1,94 @@
+.Home {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f6f2;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7b1e1e;
+  padding: 1rem 2rem;
+  color: white;
+
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+
+    .nav-item {
+      position: relative;
+
+      .nav-link {
+        color: white;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: color 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          color: #f4d58d;
+        }
+      }
+    }
+  }
+}
+
+.background-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 500px;
+  border-bottom: 5px solid #7b1e1e;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15); /* רקע לבן שקוף עדין */
+  border-radius: 14px;
+  padding: 10px 16px;
+  box-shadow: 0 4px 15px rgba(123, 30, 30, 0.15); /* צל רך וחם */
+  transition: all 0.3s ease;
+  min-width: 280px;
+  max-width: 600px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px); /* מטשטש רקע למראה אלגנטי */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dropdown-menu button {
+  background: transparent;
+  border: none; /* ללא מסגרת */
+  padding: 6px 14px;
+  font-size: 0.85rem; /* קטן יותר */
+  font-weight: 500;
+  color: #7b1e1e; /* חום יין עדין */
+  cursor: pointer;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.dropdown-menu button:hover {
+  background-color: rgba(123, 30, 30, 0.15);
+  color: #4a0f0f;
+}

@@ -1,0 +1,81 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "שרה פסטינגר",
+      "email": "s0527115231@gmail.com",
+      "password": "sgF9YA*7Dr8b",
+      "isAdmin": true
+    },
+    {
+      "id": "2",
+      "name": "דוד כהן",
+      "email": "david.cohen@example.com",
+      "isAdmin": false,
+      "password": "adminDavid!"
+    },
+    {
+      "id": "3",
+      "name": "שרה מזרחי",
+      "email": "sara.mizrahi@example.com",
+      "isAdmin": false,
+      "password": "saraPass22"
+    },
+    {
+      "id": "4",
+      "name": "יוסי פרץ",
+      "email": "yossi.peretz@example.com",
+      "isAdmin": false,
+      "password": "yossi456"
+    },
+    {
+      "id": "5",
+      "name": "מיכל אברהם",
+      "email": "michal.abraham@example.com",
+      "isAdmin": false,
+      "password": "michal789"
+    },
+    {
+      "id": "6",
+      "name": "מירי כהן",
+      "email": "miri@gmail.com",
+      "password": "yfk$DjjPKC1r",
+      "isAdmin": false
+    },
+    {
+      "id": "7",
+      "name": "מירי ליפשיץ",
+      "email": "chir45i@gmail.com",
+      "password": "yfk$DjjPKC1r",
+      "isAdmin": false
+    },
+    {
+      "id": "8",
+      "name": "חנה ליפשיץ",
+      "email": "s0521@gmail.com",
+      "password": "x6fDKJN%4GH7",
+      "isAdmin": false
+    },
+    {
+      "id": "9",
+      "name": "חנה ליפשיץ",
+      "email": "s0527345231@gmail.com",
+      "password": "gPKGZ2B5Z@8u",
+      "isAdmin": false
+    },
+    {
+      "id": "10",
+      "name": "חנה ",
+      "email": "dgb@gmail.com",
+      "password": "5XK@siEQduaq",
+      "isAdmin": false
+    },
+    {
+      "id": "11",
+      "name": "שני",
+      "email": "shany6881@gmail.com",
+      "password": "Sישמט6881!",
+      "isAdmin": false
+    }
+  ]
+}

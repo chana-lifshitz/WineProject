@@ -1,0 +1,145 @@
+.wine-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.wine-card {
+  background-color: #d69f5c;
+  border: 2px solid #d8c9a6; /* מסגרת בז' */
+  border-radius: 12px;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  width: 220px;
+  height: 350px;
+ 
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wine-card:hover {
+  transform: scale(1.05); /* מגדיל את הכרטיס כשעוברים עליו */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 240px; /* ממש גדול */
+  height: 240px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.category-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.category-dropdown .category-button {
+  background-color: #742d2d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.category-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f4f4f4;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.category-dropdown .dropdown-content div {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.category-dropdown .dropdown-content div:hover {
+  background-color: #eaeaea;
+}
+
+.category-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.load-more-btn {
+  background-color: #e6d7c3;
+  color: #4a2c2a;
+  border: 1px solid #d6c3ae;
+  padding: 10px 22px; /* גודל מעט יותר גדול */
+  font-size: 16px; /* גודל טקסט מוגדל */
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 30px auto;
+  display: block;
+}
+
+.load-more-btn:hover {
+  background-color: #d9c8b0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.add-wine-btn {
+  background: #742d2d;
+  color: white;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.add-wine-btn:hover {
+  background: #4a0f0f;
+}
+.wine-card {
+  position: relative; /* חשוב כדי שהכפתור ימוקם יחסית לכרטיס */
+  border: 2px solid #d8c9a6;
+  border-radius: 12px;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  width: 220px;
+  height: 350px;
+  background-color: #fffdf7;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #c00; /* אדום */
+  font-size: 1.2rem;
+  padding: 0;
+}
