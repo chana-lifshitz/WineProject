@@ -12,6 +12,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const wines = require('./Routs/wine.rout');
 const customers = require('./Routs/customers.rout');
 const connectDB = require('./config/db');
@@ -37,6 +38,15 @@ app.use('/image', express.static(path.join(__dirname,'image')));
 
 app.use('/api/sommelier', sommelier);
 
+// הגשת אתר ה-React הבנוי (react/build), כשהשרת והאתר רצים יחד באותו שירות
+const reactBuild = path.join(__dirname, '..', 'react', 'build');
+if (fs.existsSync(reactBuild)) {
+    app.use(express.static(reactBuild));
+    // כל כתובת שאינה API או תמונה מוחזרת ל-React Router
+    app.get(/^\/(?!api\/|image\/).*/, (req, res) => {
+        res.sendFile(path.join(reactBuild, 'index.html'));
+    });
+}
 
 // app.listen(port, host_name, () => {
 //         console.log(`server is up in address http://${host_name}:${port}`);
