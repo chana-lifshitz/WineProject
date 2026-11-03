@@ -6,9 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router';
 import { WineProvider } from './context/WineContext';
 import { Provider } from 'react-redux';
-import { combineSlices, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import shoppingSlice from './redux/shoppingSlice';
-import { WineModel } from './models/wine';
 import userSlice from './redux/userSlice'; 
 import messageSlice from './redux/messageSlice';
 

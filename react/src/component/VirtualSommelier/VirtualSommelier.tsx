@@ -1,3 +1,4 @@
+import { API_URL } from '../../config';
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useNavigate } from 'react-router';
@@ -48,7 +49,7 @@ export default function VirtualSommelier({ onAddToCart }: VirtualSommelierProps)
         setMessages(prev => [...prev, { sender: 'user', text: userMsg }]);
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/api/sommelier', {
+            const response = await fetch(`${API_URL}/api/sommelier`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -114,7 +115,7 @@ export default function VirtualSommelier({ onAddToCart }: VirtualSommelierProps)
                                             <div key={wine._id || wine.id} className="mini-wine-card">
                                                 {wine.image && (
                                                     <img 
-                                                        src={wine.image.startsWith('http') ? wine.image : `http://localhost:5000/image/${wine.image}`} 
+                                                        src={wine.image.startsWith('http') ? wine.image : `${API_URL}/image/${wine.image}`} 
                                                         alt={wine.name} 
                                                     />
                                                 )}

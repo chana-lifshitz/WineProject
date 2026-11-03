@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Toast from 'react-bootstrap/Toast';
 import { hideMessage } from '../../redux/messageSlice';
 import './MessageToast.scss';
 

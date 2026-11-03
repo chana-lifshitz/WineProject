@@ -25,7 +25,7 @@ useEffect(() => {
   } else {
     dispatch(setUser(JSON.parse(userData)));
   }
-}, []);
+}, [dispatch]);
   const showVideo = location.pathname === '/Home' || location.pathname === '/Home/About';
 
   return (

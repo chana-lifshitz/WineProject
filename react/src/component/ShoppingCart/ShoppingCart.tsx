@@ -1,3 +1,4 @@
+import { API_URL } from '../../config';
 import React, { FC, useState } from 'react';
 import './ShoppingCart.scss';
 import { useSelector, useDispatch } from 'react-redux';
@@ -76,7 +77,7 @@ const ShoppingCart: FC = () => {
             {shoppingCart.map((item) => (
               <li key={item.id} className="cart-item">
                 <img
-                  src={`http://localhost:5000/image/${item.image}`}
+                  src={`${API_URL}/image/${item.image}`}
                   alt={item.name}
                   className="cart-image"
                 />

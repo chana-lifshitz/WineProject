@@ -18,8 +18,9 @@ const connectDB = require('./config/db');
 const sommelier = require('./Routs/sommelier.rout');
 // connectDB();
 
-const host_name = process.env.HOST_NAME || '127.0.0.1';
-const port = process.env.PORT;
+// ב-Render השרת חייב להאזין על 0.0.0.0
+const host_name = process.env.HOST_NAME || '0.0.0.0';
+const port = process.env.PORT || 5000;
 app.use(cors()); // חשוב אם הלקוח בריאקט על פורט אחר
 // app.use(express.json()); // לפרוס JSON בבקשות POST
 

@@ -1,3 +1,4 @@
+import { API_URL } from '../../config';
 import React, { FC, useEffect, useState } from 'react';
 import './WineDetails.scss';
 import { useLocation, useNavigate } from 'react-router';
@@ -42,7 +43,7 @@ const isAdmin = JSON.parse(sessionStorage.getItem("user-data") || '{}').isAdmin 
           delay: 4000
         }));
       });
-  }, [location.state]);
+  }, [location.state, dispatch]);
 
   const handleAddReview = async () => {
     if (!newReview.trim()) {
@@ -107,7 +108,7 @@ const isAdmin = JSON.parse(sessionStorage.getItem("user-data") || '{}').isAdmin 
           <div className="wine-image-side">
             <img
               className="wine-image"
-              src={`http://localhost:5000/image/${WineDetail.image}`}
+              src={`${API_URL}/image/${WineDetail.image}`}
               alt={WineDetail.name}
             />
             {addedToCart && <p className="cart-message">🍷 נוסף לסל!</p>}

@@ -29,7 +29,7 @@ const VisitorCenter: FC<VisitorCenterProps> = () => (
       <div className="images">
         <img src="/images/איש-שותה-יין-ממקרר-יין.jpg" alt="vineyard" />
         <img src="/images/איש-שותה-יין.png" alt="wine" />
-        <img src="/images/איש-שותה-י2.png" />
+        <img src="/images/איש-שותה-י2.png" alt="wine" />
       </div>
     </section>
   </div>

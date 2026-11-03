@@ -1,3 +1,4 @@
+import { API_URL } from '../../config';
 import React, { FC, useEffect, useState, useMemo } from 'react';
 import './Wines.scss';
 import { useNavigate } from 'react-router';
@@ -113,7 +114,7 @@ const Wines: FC = () => {
             <h3>{w.name}</h3>
             <img
               className="product-image"
-              src={`http://localhost:5000/image/${w.image}`}
+              src={`${API_URL}/image/${w.image}`}
               alt={w.name}
             />
 
