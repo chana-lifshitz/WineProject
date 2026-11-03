@@ -20,10 +20,11 @@ const SignUp: FC<SignUpProps> = () => {
   const save = async (values: any) => {
     try {
       const response = await AddCustomer(values.name, values.email, values.password);
+      const user = response.data.data;
 
-      sessionStorage.setItem('my-token', response.data.id);
-      sessionStorage.setItem('user-data', JSON.stringify(response.data));
-      dispatch(setUser(response.data));
+      sessionStorage.setItem('my-token', String(user.id));
+      sessionStorage.setItem('user-data', JSON.stringify(user));
+      dispatch(setUser(user));
 
       dispatch(showMessage({
         title: 'הצלחה',

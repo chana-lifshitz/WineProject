@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { WineModel } from '../models/wine';
 
 export function GetAllWines() {
   return axios.get('http://localhost:5000/api/wines');

@@ -16,9 +16,14 @@ const customerSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    // משתמשים שנרשמו דרך Google לא מחזיקים סיסמה
     password: {
         type: String,
-        required: true
+        default: ''
+    },
+    googleId: {
+        type: String,
+        default: ''
     },
     isAdmin: {
         type: Boolean,

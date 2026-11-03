@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Navbar } from 'react-bootstrap';
 
 interface WineContextType {
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
+  recommendedWines: any[] | null;
+  setRecommendedWines: (wines: any[] | null) => void;
 }
 
 const WineContext = createContext<WineContextType | null>(null);
@@ -15,10 +16,16 @@ export const useWineContext = () => {
 };
 
 export const WineProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('היינות שלנו');
+  const [selectedCategory, setSelectedCategoryState] = useState<string>('היינות שלנו');
+  const [recommendedWines, setRecommendedWines] = useState<any[] | null>(null);
+
+  const setSelectedCategory = (category: string) => {
+    setRecommendedWines(null);
+    setSelectedCategoryState(category);
+  };
 
   return (
-    <WineContext.Provider value={{ selectedCategory, setSelectedCategory }}>
+    <WineContext.Provider value={{ selectedCategory, setSelectedCategory, recommendedWines, setRecommendedWines }}>
       {children}
     </WineContext.Provider>
   );

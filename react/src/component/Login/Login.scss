@@ -13,6 +13,9 @@
     box-shadow: 0 0 12px rgba(100, 50, 20, 0.2);
     font-family: 'Assistant', sans-serif;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h2 {
       color: #5e2c04;

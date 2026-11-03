@@ -15,7 +15,7 @@ const path = require('path');
 const wines = require('./Routs/wine.rout');
 const customers = require('./Routs/customers.rout');
 const connectDB = require('./config/db');
-
+const sommelier = require('./Routs/sommelier.rout');
 // connectDB();
 
 const host_name = process.env.HOST_NAME || '127.0.0.1';
@@ -34,7 +34,7 @@ app.use('/api/wines', wines);
 
 app.use('/image', express.static(path.join(__dirname,'image')));
 
-
+app.use('/api/sommelier', sommelier);
 
 
 // app.listen(port, host_name, () => {

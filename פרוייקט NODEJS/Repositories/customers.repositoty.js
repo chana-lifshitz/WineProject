@@ -172,6 +172,31 @@ class Customer_repository {
         };
     }
 
+    // מאתר לקוח לפי האימייל של Google, ואם אינו קיים - יוצר אותו
+    async findOrCreateGoogleCustomer({ googleId, email, name }) {
+        let customer = await Customer.findOne({ email });
+
+        if (!customer) {
+            customer = await Customer.create({
+                id: await this.generateNewId(),
+                name: name || email,
+                email,
+                googleId,
+                isAdmin: false
+            });
+        } else if (!customer.googleId) {
+            customer.googleId = googleId;
+            await customer.save();
+        }
+
+        return {
+            id: customer.id,
+            name: customer.name,
+            email: customer.email,
+            isAdmin: customer.isAdmin
+        };
+    }
+
     async updateCustomer(updatedCustomer) {
         const customer = await Customer.findOne({ id: updatedCustomer.id });
 

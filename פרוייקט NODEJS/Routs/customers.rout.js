@@ -153,16 +153,15 @@ router.post('/google', async (req, res) => {
             });
         }
 
-        // בשלב הזה האימות הצליח.
-        // צריך למצוא או ליצור לקוח באמצעות ה־Repository.
+        const customer = await customerRepository.findOrCreateGoogleCustomer({
+            googleId: sub,
+            email,
+            name
+        });
+
         return res.status(200).json({
             success: true,
-            message: 'Google authentication verified',
-            data: {
-                googleId: sub,
-                email,
-                name
-            }
+            ...customer
         });
     } catch (error) {
         console.error('Google authentication error:', error.message);

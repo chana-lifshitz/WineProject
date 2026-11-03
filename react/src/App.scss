@@ -4,6 +4,12 @@
 *{
   caret-color: transparent;
 }
+// בשדות הקלדה מציגים את סמן ההקלדה
+input,
+textarea,
+[contenteditable="true"] {
+  caret-color: auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -26,9 +26,10 @@ const Login: FC<LoginProps> = () => {
     try {
       const response = await GoogleCustomerLogin(credential);
       if (response.data.success) {
-        sessionStorage.setItem('my-token', String(response.data.id));
-        sessionStorage.setItem('user-data', JSON.stringify(response.data));
-        dispatch(setUser(response.data));
+        const { success, message, ...user } = response.data;
+        sessionStorage.setItem('my-token', String(user.id));
+        sessionStorage.setItem('user-data', JSON.stringify(user));
+        dispatch(setUser(user));
         myNavigate('/Home/About');
       } else {
         dispatch(showMessage({
@@ -49,11 +50,10 @@ const Login: FC<LoginProps> = () => {
       <div className="login-form-container">
         <h2>התחברות</h2>
         {googleClientId ? (
-          <GoogleOAuthProvider clientId={googleClientId}>
+          <GoogleOAuthProvider clientId={googleClientId} locale="he">
             <GoogleLogin
               onSuccess={(response) => loginWithGoogle(response.credential)}
               onError={() => loginWithGoogle()}
-              locale="he"
               text="signin_with"
               shape="rectangular"
               theme="outline"

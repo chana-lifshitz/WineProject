@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import './App.css';
+import './App.scss';
 import { Route, Routes } from 'react-router';
 import Login from './component/Login/Login';
 import Home from './component/Home/Home';
@@ -14,6 +14,7 @@ import CustomerDetails from './component/CustomerDetails/CustomerDetails';
 import SignUp from './component/SignUp/SignUp';
 import MessageToast from './component/MessageToast/MessageToast';
 import SiteNavigation from './component/SiteNavigation/SiteNavigation';
+import VirtualSommelier from './component/VirtualSommelier/VirtualSommelier';
 
 const AddWineFormLazy=React.lazy(()=>
   import('./component/AddWineForm/AddWineForm'))
@@ -49,6 +50,7 @@ function App() {
 
       </Routes>
       <MessageToast></MessageToast>
+      <VirtualSommelier></VirtualSommelier>      
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { showMessage } from '../../redux/messageSlice';
 const Wines: FC = () => {
   const myNavigate = useNavigate();
   const dispatch = useDispatch();
-  const { selectedCategory } = useWineContext();
+  const { selectedCategory, recommendedWines, setRecommendedWines } = useWineContext();
   const [wines, setWines] = useState<WineModel[]>([]);
   const [displayedCount, setDisplayedCount] = useState(20);
   const [showAddForm, setShowAddForm] = useState(false);
@@ -39,7 +39,13 @@ const Wines: FC = () => {
       });
   }, [selectedCategory, dispatch]);
 
-  const visibleWines = useMemo(() => wines.slice(0, displayedCount), [wines, displayedCount]);
+  const visibleWines = useMemo(() => {
+    // היינות שהיועץ המליץ עליהם מגיעים מלאים מהשרת, ללא תלות בקטגוריה שנבחרה
+    if (recommendedWines) {
+      return recommendedWines as WineModel[];
+    }
+    return wines.slice(0, displayedCount);
+  }, [wines, displayedCount, recommendedWines]);
 
   const handleLoadMore = () => {
     setDisplayedCount(prev => Math.min(prev + 10, wines.length));
@@ -66,8 +72,16 @@ const Wines: FC = () => {
   };
 
   return (
-    <div className="Wines">
-      <h2 style={{ textAlign: 'center' }}>{selectedCategory || 'כל היינות'}</h2>
+    <div className="Wines" dir="rtl">
+      <h2 style={{ textAlign: 'center' }}>{recommendedWines ? 'היינות שהומלצו עבורך' : (selectedCategory || 'כל היינות')}</h2>
+
+      {recommendedWines && (
+        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <button className="load-more-btn" onClick={() => setRecommendedWines(null)}>
+            הצג את כל היינות
+          </button>
+        </div>
+      )}
 
       {isAdmin && (
         <button
@@ -124,7 +138,7 @@ const Wines: FC = () => {
         ))}
       </div>
 
-      {displayedCount < wines.length && (
+      {!recommendedWines && displayedCount < wines.length && (
         <div style={{ textAlign: 'center', marginTop: '1rem' }}>
           <button className="load-more-btn" onClick={handleLoadMore}>
             טען עוד
