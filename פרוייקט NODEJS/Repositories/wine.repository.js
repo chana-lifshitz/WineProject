@@ -95,7 +95,7 @@
 
 // module.exports = new Wine_repository();
 
-const Wine = require('../Models/wine.model');
+const Wine = require('../models/wine.model');
 
 class Wine_repository {
     constructor() {}
